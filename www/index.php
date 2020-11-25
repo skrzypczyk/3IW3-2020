@@ -1,5 +1,7 @@
 <?php
 
+require "Core/Routing.class.php";
+
 /*
 http://localhost/user/add
 
@@ -8,11 +10,24 @@ $a = "add" sinon par défaut je veux "default"
 
 */
 
-//[REQUEST_URI] => /user/add/
-$uri  = trim($_SERVER["REQUEST_URI"], "/");
-//   $uri = user/add
-//   $uri = ""
-$uriExploded = explode("?", $uri);
+$uriExploded = explode("?", $_SERVER["REQUEST_URI"]);
+//  /ajout-d-un-utilisateur
+$uri = $uriExploded[0];
+
+
+$route = new Routing($uri);
+$c =  $route->getController();
+$a =  $route->getAction();
+
+/*
+
+
+
+
+
+
+
+
 $uriExploded = explode("/", $uriExploded[0]);
 
 
@@ -23,6 +38,7 @@ $a = ($uriExploded[1]??"default")."Action";
 
 //Appeler le bon controller et la bonne action en fonction de $c et $a
 //et en faisant les bonnes vérifications
+*/
 if( file_exists("./Controllers/".$c.".class.php")){
 
 	include "./Controllers/".$c.".class.php";
@@ -45,3 +61,4 @@ if( file_exists("./Controllers/".$c.".class.php")){
 }else{
 	die("Le fichier ".$c." n'existe pas");
 }
+
