@@ -33,7 +33,11 @@ class Routing{
 		return $this->action;
 	}
 
+	public function getUri($controller, $action){
 
+
+		//Return /login;
+	}
 
 
 }
