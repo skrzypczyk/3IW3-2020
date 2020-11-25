@@ -1,0 +1,15 @@
+/:
+  controller: Global
+  action: Default
+
+/login:
+  controller: Security
+  action: login
+
+/logout:
+  controller: Security
+  action: logout
+
+/list-des-utilisateurs:
+  controller: Security
+  action: listofusers

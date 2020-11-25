@@ -14,4 +14,9 @@ class SecurityController{
 		echo "controller security action logout";
 	}
 
+
+	public function listofusersAction(){
+		echo "Là je liste tous les utilisateurs";
+	}
+
 }
