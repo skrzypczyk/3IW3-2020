@@ -1,7 +1,10 @@
 /:
-  controller: Global
+  controller: Base
   action: Default
 
+/tableau-de-bord:
+  controller: Base
+  action: dashboard
 
 /login:
   controller: Security
@@ -18,8 +21,6 @@
   action: logout
 
 
-
-/list-des-utilisateurs:
+/liste-des-utilisateurs:
   controller: Security
   action: listofusers
-  roles: admin

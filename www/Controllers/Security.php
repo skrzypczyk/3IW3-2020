@@ -1,5 +1,10 @@
 <?php
-class SecurityController{
+
+namespace App;
+
+use App\Core\Security as coreSecurity;
+
+class Security{
 
 
 	public function defaultAction(){
@@ -14,8 +19,13 @@ class SecurityController{
 		echo "controller security action logout";
 	}
 
-
 	public function listofusersAction(){
+
+		$security = new coreSecurity(); 
+		if(!$security->isConnected()){
+			die("Error not authorized");
+		}
+
 		echo "Là je liste tous les utilisateurs";
 	}
 

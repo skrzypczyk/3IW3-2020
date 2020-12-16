@@ -1,6 +1,17 @@
 <?php
+namespace App;
 
-require "Core/Routing.class.php";
+
+use App\Core\Routing; 
+
+
+require "Autoloader.php";
+require "conf.inc.php";
+
+Autoloader::register();
+
+
+
 
 /*
 http://localhost/user/add
@@ -14,18 +25,17 @@ $uriExploded = explode("?", $_SERVER["REQUEST_URI"]);
 //  /ajout-d-un-utilisateur
 $uri = $uriExploded[0];
 
-
 $route = new Routing($uri);
-$c =  $route->getController();
-$a =  $route->getAction();
+$c = $route->getController();
+$a = $route->getAction();
+
+$cWithNamespace = $route->getControllerWithNamespace();
+
+
+//echo $route->getUri("Security", "listofusers");
+//echo $route->getUri("Security", "login");
 
 /*
-
-
-
-
-
-
 
 
 $uriExploded = explode("/", $uriExploded[0]);
@@ -39,13 +49,13 @@ $a = ($uriExploded[1]??"default")."Action";
 //Appeler le bon controller et la bonne action en fonction de $c et $a
 //et en faisant les bonnes vérifications
 */
-if( file_exists("./Controllers/".$c.".class.php")){
+if( file_exists("./Controllers/".$c.".php")){
 
-	include "./Controllers/".$c.".class.php";
+	include "./Controllers/".$c.".php";
 
-	if(class_exists($c)){
-		//$c = SecurityController // UserController
-		$cObject = new $c();
+	if(class_exists($cWithNamespace)){
+		//$c = App\Security // User
+		$cObject = new $cWithNamespace();
 
 		if(method_exists($cObject, $a)){
 			//$a = loginAction // defaultAction
