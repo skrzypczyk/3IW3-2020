@@ -8,6 +8,7 @@ class View
 	private $template; // front ou back
 	// default_view.php
 	private $view; // default, dashboard, profile, ....
+	private $data = [];
 
 	public function __construct($view="default", $template="front"){
 		$this->setTemplate($template);
@@ -32,8 +33,14 @@ class View
 		}
 	}
 
+	public function assign($key, $value){
+		$this->data[$key] = $value;
+	}
+
 
 	public function __destruct(){
+		// $this->data = ["pseudo"=>"Prof"];  ----> $pseudo = "Prof";
+		extract($this->data);
 		include $this->template;
 	}
 

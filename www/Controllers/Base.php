@@ -10,9 +10,17 @@ class Base{
 
 
 	public function defaultAction(){
-		echo "controller global action default";
+
+		//Je vais cherche en bdd le pseudo du user
+		$pseudo = "Prof";
 
 		//Affiche moi la vue home;
+		$view = new View();
+		$view->assign("pseudo", $pseudo);
+		$view->assign("age", 17);
+		$view->assign("genre", "h");
+
+		//envoyer le pseudo à la vue
 	}
 
 
