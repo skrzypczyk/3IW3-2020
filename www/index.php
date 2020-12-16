@@ -4,14 +4,10 @@ namespace App;
 
 use App\Core\Routing; 
 
-
 require "Autoloader.php";
 require "conf.inc.php";
 
 Autoloader::register();
-
-
-
 
 /*
 http://localhost/user/add
