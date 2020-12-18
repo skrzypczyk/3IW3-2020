@@ -12,7 +12,7 @@ class Autoloader
 			//   App\Core\routing -> \Core\routing
 			$class = str_ireplace(__NAMESPACE__, "", $class);
 			
-			// \Core\routing.php -> /Core/routing
+			// \Core\routing -> /Core/routing
 			$class = str_ireplace("\\", "/", $class);
 
 			// /Core/routing -> Core/routing
