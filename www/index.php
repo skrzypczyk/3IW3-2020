@@ -3,11 +3,12 @@ namespace App;
 
 
 use App\Core\Routing; 
+use App\Core\ConstantManager; 
 
 require "Autoloader.php";
-require "conf.inc.php";
-
 Autoloader::register();
+
+new ConstantManager();
 
 /*
 http://localhost/user/add

@@ -3,12 +3,24 @@
 namespace App;
 
 use App\Core\Security as coreSecurity;
+use App\Core\Database;
+use App\Core\ConstantManager;
 
 class Security{
 
 
 	public function defaultAction(){
 		echo "controller security action default";
+	}
+
+
+	public function registerAction(){
+		
+		$sql = new Database();
+
+		echo DBNAME;
+		//ConstantManager::defineConstant("DBUSER", "test");
+
 	}
 
 	public function loginAction(){

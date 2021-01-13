@@ -6,6 +6,11 @@
   controller: Base
   action: dashboard
 
+
+/s-inscrire:
+  controller: Security
+  action: register
+
 /login:
   controller: Security
   action: login
@@ -13,7 +18,6 @@
 /se-connecter:
   controller: Security
   action: login
-
 
 
 /logout:
