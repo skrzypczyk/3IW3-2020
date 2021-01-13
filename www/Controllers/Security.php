@@ -5,6 +5,7 @@ namespace App;
 use App\Core\Security as coreSecurity;
 use App\Core\Database;
 use App\Core\ConstantManager;
+use App\Models\User;
 
 class Security{
 
@@ -16,10 +17,14 @@ class Security{
 
 	public function registerAction(){
 		
-		$sql = new Database();
+		$user = new User();
+		$user->setFirstname("Yves");
+		$user->setLastname("Skrzypczyk");
+		$user->setEmail("y.skrzypczyk@gmail.com");
+		$user->setPwd("Test1234");
+		$user->setCountry("fr");
 
-		echo DBNAME;
-		//ConstantManager::defineConstant("DBUSER", "test");
+		$user->save();
 
 	}
 
