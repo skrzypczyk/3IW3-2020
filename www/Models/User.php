@@ -20,6 +20,8 @@ class User extends Database
 	}
 
 	public function setId($id){
+		//Il va chercher en BDD toutes les informations de l'utilisateur
+		//et il va alimenter l'objet avec toutes ces données
 		$this->id = $id;
 	}
 
@@ -53,5 +55,68 @@ class User extends Database
 	}
 
 
+	public function buildFormRegister(){
+		return [
+
+				"config"=>[
+					"method"=>"POST",
+					"Action"=>"",
+					"Submit"=>"S'inscrire",
+					"class"=>"form_register"
+				],
+				"input"=>[
+					"firstname"=>[
+									"type"=>"text",
+									"class"=>"form_input",
+									"label"=>"Prénom",
+									"lengthMax"=>"120",
+									"lengthMin"=>"2",
+									"required"=>true,
+									"error"=>"Votre prénom doit faire entre 2 et 120 caractères",
+									"placeholder"=>"Votre prénom"
+									],
+					"lastname"=>[
+									"type"=>"text",
+									"lengthMax"=>"255",
+									"lengthMin"=>"2",
+									"required"=>true,
+									"error"=>"Votre nom doit faire entre 2 et 255 caractères",
+									"placeholder"=>"Votre nom"
+									],
+					"email"=>[
+									"type"=>"email",
+									"lengthMax"=>"320",
+									"lengthMin"=>"8",
+									"required"=>true,
+									"error"=>"Votre email doit faire entre 8 et 320 caractères",
+									"placeholder"=>"Votre email"
+									],
+					"pwd"=>[
+									"type"=>"password",
+									"lengthMin"=>"8",
+									"required"=>true,
+									"error"=>"Votre mot de passe doit faire plus de 8 caractères",
+									"placeholder"=>"Votre mot de passe"
+									],
+					"pwdConfirm"=>[
+									"type"=>"password",
+									"confirm"=>"pwd",
+									"required"=>true,
+									"error"=>"Votre mot de passe de confirmation est incorrect",
+									"placeholder"=>"Confirmation"
+									]
+				]
+
+			];
+	}
 
 }
+
+
+
+
+
+
+
+
+

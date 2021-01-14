@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Core\Form;
+
 class View
 {
 	// front_tpl.php
@@ -36,6 +38,7 @@ class View
 	public function assign($key, $value){
 		$this->data[$key] = $value;
 	}
+
 
 
 	public function __destruct(){
