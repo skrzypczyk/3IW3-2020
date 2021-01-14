@@ -6,14 +6,14 @@ use App\Core\Database;
 class User extends Database
 {
 	private $id=null;
-	private $firstname;
-	private $lastname;
-	private $email;
-	private $pwd;
-	private $country;
-	private $status = 0;
-	private $role = 0;
-	private $isDeleted = 0;
+	protected $firstname;
+	protected $lastname;
+	protected $email;
+	protected $pwd;
+	protected $country;
+	protected $status = 0;
+	protected $role = 0;
+	protected $isDeleted = 0;
 
 	public function __construct(){
 		parent::__construct();

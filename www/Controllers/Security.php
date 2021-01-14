@@ -23,7 +23,6 @@ class Security{
 		$user->setEmail("y.skrzypczyk@gmail.com");
 		$user->setPwd("Test1234");
 		$user->setCountry("fr");
-
 		$user->save();
 
 	}
