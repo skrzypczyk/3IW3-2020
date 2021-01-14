@@ -22,6 +22,11 @@ class User extends Database
 	public function setId($id){
 		$this->id = $id;
 	}
+
+	public function getId(){
+		return $this->id;
+	}
+
 	public function setFirstname($firstname){
 		$this->firstname = $firstname;
 	}

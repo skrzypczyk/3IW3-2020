@@ -18,12 +18,22 @@ class Security{
 	public function registerAction(){
 		
 		$user = new User();
-		$user->setFirstname("Yves");
-		$user->setLastname("Skrzypczyk");
+		$user->setFirstname("Toto");
+		$user->setLastname("Titi");
 		$user->setEmail("y.skrzypczyk@gmail.com");
 		$user->setPwd("Test1234");
 		$user->setCountry("fr");
 		$user->save();
+
+
+		
+		/*
+		$user = new User();
+		$user->setId(2);
+		$user->setLastname("Toto");
+		$user->save();
+		*/
+		
 
 	}
 
